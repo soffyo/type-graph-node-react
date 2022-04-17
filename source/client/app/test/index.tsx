@@ -21,7 +21,7 @@ export default function Test() {
                 </span>
             </div>
             <div>
-                {loaded && data.users.map(item => <div key={item.email}>{item.role}</div>)}
+                {loaded && data.argTest}
             </div>
             <div>
                 <button onClick={() => execute()}>

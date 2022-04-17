@@ -1,7 +1,3 @@
 query test {
-    users {
-        username
-        email
-        role
-    }
+  argTest(arg: "TEST ARGUMENT")
 }
