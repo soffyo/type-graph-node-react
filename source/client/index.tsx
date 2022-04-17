@@ -11,7 +11,7 @@ root.render (
     <React.StrictMode>
         <BrowserRouter>
             <Routes>
-                <Route path="/*" element={<App name="blissLog"/>}/>
+                <Route path="/*" element={<App name="Typescript GraphQL React Template"/>}/>
             </Routes>
         </BrowserRouter>
     </React.StrictMode>
