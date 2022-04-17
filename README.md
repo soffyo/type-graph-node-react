@@ -18,6 +18,8 @@ This project aims to help developers with the Node.js apps creation process. It 
 
 [GraphQL Code Generator](https://www.graphql-code-generator.com/) is setup for automatic Types generation based on your schema and operation files. Support for [TypedDocumentNode](https://www.graphql-code-generator.com/plugins/typed-document-node) is included.
 
+[useGraphQL](https://github.com/soffyo/use-graphql-ts) is the react/graphql client used.
+
 ## Bundler
 
 [Webpack](https://webpack.js.org/) is used as bundler, featuring [Hot Module Replacement](https://webpack.js.org/concepts/hot-module-replacement/) setup via `webpack-dev-middleware`.
