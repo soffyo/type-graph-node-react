@@ -1,0 +1,7 @@
+query test {
+    users {
+        username
+        email
+        role
+    }
+}

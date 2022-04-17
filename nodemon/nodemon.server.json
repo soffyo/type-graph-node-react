@@ -1,0 +1,5 @@
+{
+    "watch": "source/server/*",
+    "exec": "NODE_ENV=development npm run start:dev",
+    "ext": "ts"
+}

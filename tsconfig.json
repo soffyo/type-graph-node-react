@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "outDir": "build",
+        "baseUrl": ".",
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "target": "es2018",
+        "lib": ["es2018", "dom", "esnext.asynciterable"],
+        "module": "commonjs",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "jsx": "react",
+        "allowJs": true,
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "typeRoots": ["node_modules/@types", "@types"],
+        "paths": {
+            "@lib/*": ["source/server/lib/*"],
+            "@graphql/*": ["source/server/graphql/*"],
+            "@components/*": ["source/client/common/components/*"],
+            "@hooks/*": ["source/client/common/hooks/*"]
+        },
+    },
+    "include": ["source/**/*"],
+    "exclude": ["node_modules"]
+}
