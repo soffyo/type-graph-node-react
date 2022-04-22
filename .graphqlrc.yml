@@ -1,7 +1,7 @@
 schema: ./source/server/graphql/schema.graphql
 documents: ./source/client/**/*.graphql
 generates:
-  ./source/client/common/graphql/index.ts:
+  ./source/client/common/graphql/types/index.ts:
     plugins:
       - typescript
       - typescript-operations

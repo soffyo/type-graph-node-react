@@ -19,5 +19,5 @@ app.use('/graphql', graphql)
 app.use('/', home)
 
 app.listen(port, () => {
-    console.log(`Server listening on ${port}...`)
+    console.log(`Server listening on port: ${port}...\nNODE ENVIRONMENT: ${process.env.NODE_ENV}`)
 })

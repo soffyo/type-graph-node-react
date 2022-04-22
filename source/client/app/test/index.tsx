@@ -1,32 +1,52 @@
 import React from "react"
 import { useGraphQL } from "use-graphql-ts"
-import { TestDocument } from "source/client/common/graphql"
+import { TestDocument } from "@graphql/types"
+import Input from "@components/input"
+import Button from "@components/button"
 
 export default function Test() {
-    const { data, loaded, execute } = useGraphQL({
+    const [arg, setArg] = React.useState<string>("")
+
+    const { data, loaded, errors, execute, reset } = useGraphQL({
         operation: TestDocument,
-        passive: true
+        passive: true,
+        variables: { arg }
     })
 
-    React.useEffect(() => {
-        console.log(loaded)
-        console.log(data)
-    }, [data, loaded])
-
     return (
-        <div>
+        <div style={{textAlign:"center"}}>
             <div>
                 <span>
-                    LOADED: <>{loaded? "YES" : "NO"}</>
+                    Loaded: <b>{loaded ? <span style={{color:"green"}}>YES</span> : "NO"}</b>
+                </span>
+            </div>
+            {loaded && (<>
+                <div>
+                    <span>
+                        Response: <b>{loaded ? data.argTest : ""}</b>
+                    </span>
+                </div>
+                <div>
+                    <span>
+                        Errors: <b>{loaded ? errors ? errors.map(e => e.message) : "No errors found" : ""}</b>
+                    </span>
+                </div>
+            </>)}
+            <Input type="text" value={arg} onChange={({ target }) => setArg(target.value)}>
+                Arguments:
+            </Input>
+            <div>
+                <span>
+                    click the button below to test if your GraphQL endpoint is working.
                 </span>
             </div>
             <div>
-                {loaded && data.argTest}
-            </div>
-            <div>
-                <button onClick={() => execute()}>
+                <Button onClick={() => execute()}>
                     TEST
-                </button>
+                </Button>
+                <Button onClick={() => {reset(); setArg("")}}>
+                    CLEAR
+                </Button>
             </div>
         </div>
     )

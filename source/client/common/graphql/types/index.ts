@@ -23,10 +23,12 @@ export type QueryArgTestArgs = {
   arg?: InputMaybe<Scalars['String']>;
 };
 
-export type TestQueryVariables = Exact<{ [key: string]: never; }>;
+export type TestQueryVariables = Exact<{
+  arg?: InputMaybe<Scalars['String']>;
+}>;
 
 
 export type TestQuery = { __typename?: 'Query', argTest: string };
 
 
-export const TestDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"test"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"argTest"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"arg"},"value":{"kind":"StringValue","value":"TEST ARGUMENT","block":false}}]}]}}]} as unknown as DocumentNode<TestQuery, TestQueryVariables>;
+export const TestDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"test"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"arg"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"argTest"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"arg"},"value":{"kind":"Variable","name":{"kind":"Name","value":"arg"}}}]}]}}]} as unknown as DocumentNode<TestQuery, TestQueryVariables>;

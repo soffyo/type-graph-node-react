@@ -24,7 +24,9 @@ This project aims to help developers with the Node.js apps creation process. It 
 
 [Webpack](https://webpack.js.org/) is used as bundler, featuring [Hot Module Replacement](https://webpack.js.org/concepts/hot-module-replacement/) setup via `webpack-dev-middleware`.
 
-> if using VSCode, a configuration file is already present for the GraphQL extension.
+## Editor
+
+If you are using VSCode, a configuration file is already present for the GraphQL extension.
 
 ## How to use
 

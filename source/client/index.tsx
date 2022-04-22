@@ -11,7 +11,7 @@ root.render (
     <React.StrictMode>
         <BrowserRouter>
             <Routes>
-                <Route path="/*" element={<App name="Typescript GraphQL React Template"/>}/>
+                <Route path="/*" element={<App/>}/>
             </Routes>
         </BrowserRouter>
     </React.StrictMode>

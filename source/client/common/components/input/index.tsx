@@ -7,7 +7,7 @@ interface inputArgs<T> extends React.InputHTMLAttributes<T> {
     type?: inputType
 }
 
-export default function Input({ name, type, style, className, onChange, children }: inputArgs<HTMLInputElement|HTMLTextAreaElement>) {
+export default function Input({ name, type, style, className, onChange, value, children }: inputArgs<HTMLInputElement|HTMLTextAreaElement>) {
     const autoComplete = () => {
         const options = []
 
@@ -22,12 +22,12 @@ export default function Input({ name, type, style, className, onChange, children
 
     return(
         <div {...{className, style}}>
-            <InputType {...{name, type, onChange, ...autoComplete}} id={`${name}_input`}/>
             {children && (
                 <label htmlFor={`${name}_input`}>
                     {children}
                 </label>
             )}
+            <InputType {...{name, type, onChange, value, ...autoComplete}} id={`${name}_input`}/>
         </div>
     )
 }

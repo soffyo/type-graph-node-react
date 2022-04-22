@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node -r dotenv/config ./build/server/server.js",
     "lint": "eslint --ignore-pattern './build/*'",
-    "codegen": "npx graphql-codegen",
+    "codegen": "npx graphql-codegen --config .graphqlrc.yml",
     "start:prod": "NODE_ENV=production npm-run-all build:prod start",
     "start:dev": "NODE_ENV=development npm-run-all lint build:dev start",
     "build:prod": "webpack --config @webpack/webpack.prod.ts",
@@ -31,7 +31,7 @@
     "react-router-dom": "^6.3.0",
     "reflect-metadata": "^0.1.13",
     "type-graphql": "^1.1.1",
-    "use-graphql-ts": "^1.0.4"
+    "use-graphql-ts": "^1.0.7"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^2.6.2",
