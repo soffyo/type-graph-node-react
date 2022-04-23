@@ -1,6 +1,6 @@
 {
   "name": "type-graph-node-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A template for creating Node.js apps using Typescript as a language, GraphQL as a server and React as a client",
   "main": "build/server/index.js",
   "scripts": {
