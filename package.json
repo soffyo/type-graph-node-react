@@ -4,6 +4,8 @@
   "description": "A template for creating Node.js apps using Typescript as a language, GraphQL as a server and React as a client",
   "main": "build/server/index.js",
   "scripts": {
+    "git": "git add . && git commit -m",
+    "postgit": "git push",
     "start": "node -r dotenv/config ./build/server/server.js",
     "lint": "eslint --ignore-pattern './build/*'",
     "codegen": "npx graphql-codegen --config .graphqlrc.yml",
@@ -13,7 +15,7 @@
     "build:dev": "webpack --config @webpack/webpack.dev.ts",
     "watch:server": "nodemon --config nodemon/nodemon.server.json",
     "watch:graphql": "nodemon --config nodemon/nodemon.graphql.json",
-    "watch": "npm run watch:server & npm run watch:graphql"
+    "watch": "concurrently --kill-others -n \"Node,Codegen\" -c \"bgRed.bold.white,bgMagenta.bold.white\" \"npm:watch:server\" \"npm:watch:graphql\""
   },
   "keywords": [],
   "author": "soffyo",
@@ -50,6 +52,7 @@
     "@typescript-eslint/eslint-plugin": "^5.19.0",
     "@typescript-eslint/parser": "^5.19.0",
     "class-validator": "^0.13.2",
+    "concurrently": "^7.1.0",
     "connect-history-api-fallback": "^1.6.0",
     "css-loader": "^6.7.1",
     "eslint": "^8.13.0",

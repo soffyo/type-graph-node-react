@@ -5,10 +5,10 @@ export class TestResolver {
     @Query(returns => String)
     argTest(@Arg("arg", { nullable: true }) arg?: string) {
         if (!arg) {
-            return "TEST OK. NO ARGS PASSED"
+            return "Test OK. No argument has been passed"
         }
 
-        return `TEST OK. FOLLOWING ARGS PASSED: ${arg}`
+        return `Test OK. You passed the following argument: ${arg}`
     }
 }
 

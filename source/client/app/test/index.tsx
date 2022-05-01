@@ -1,6 +1,6 @@
 import React from "react"
 import { useGraphQL } from "use-graphql-ts"
-import { TestDocument } from "@graphql/types"
+import { TestDocument } from "@graphql/client/types"
 import Input from "@components/input"
 import Button from "@components/button"
 

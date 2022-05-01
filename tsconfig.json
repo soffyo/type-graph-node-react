@@ -17,7 +17,8 @@
         "typeRoots": ["node_modules/@types", "@types"],
         "paths": {
             "@lib/*": ["source/server/lib/*"],
-            "@graphql/*": ["source/client/common/graphql/*"],
+            "@graphql/client/*": ["source/client/common/graphql/*"],
+            "@graphql/server/*": ["source/server/graphql/*"],
             "@components/*": ["source/client/common/components/*"],
             "@hooks/*": ["source/client/common/hooks/*"]
         },
