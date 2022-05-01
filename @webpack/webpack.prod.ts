@@ -6,6 +6,9 @@ import { server$common, client$common } from './webpack.common'
 const server$prod: Configuration = {
     mode: 'production',
     devtool: 'source-map',
+    output: {
+        path: resolve('./build/prod/server/'),
+    }
 }
 
 const client$prod: Configuration = {
@@ -21,7 +24,7 @@ const client$prod: Configuration = {
     },
     output: {
         filename: '[name].js',
-        path: resolve('./build/client/'),
+        path: resolve('./build/prod/client/'),
         clean: true
     }
 }

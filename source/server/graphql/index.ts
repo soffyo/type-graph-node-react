@@ -2,13 +2,13 @@ import "reflect-metadata"
 import { Router } from "express"
 import { buildSchema } from "type-graphql"
 import { graphqlHTTP } from "express-graphql"
-import { NoSchemaIntrospectionCustomRule } from "graphql"
+// import { NoSchemaIntrospectionCustomRule } from "graphql"
 import { TestResolver } from "./tests"
 import { resolve } from "path"
 
 const router = Router()
 
-async function init() {
+void (async function initialize() {
     const schema = await buildSchema({
         resolvers: [TestResolver],
         emitSchemaFile: resolve("./source/server/graphql/schema.graphql")
@@ -23,8 +23,6 @@ async function init() {
             //validationRules
         } 
     }))
-}
-
-init()
+})()
 
 export default router

@@ -12,7 +12,6 @@ export const server$common: Configuration = {
     externals: [NodeExternals()],
     output: {
         filename: '[name].js',
-        path: resolve('./build/server/'),
         clean: true
     },
     optimization: {

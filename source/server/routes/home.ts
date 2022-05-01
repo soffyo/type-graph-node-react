@@ -3,7 +3,7 @@ import { resolve } from "path"
 
 const router = Router()
 
-async function init() {    
+void (async function initialize() {    
     if (process.env.NODE_ENV == "development") {
         const { default: webpackHMR } = await import("@webpack/webpack.hmr")
 
@@ -15,12 +15,10 @@ async function init() {
 
         router.use(webpackHMR)
     } else {
-        router.use(serve(resolve('./build/client')))
+        router.use(serve(resolve('./build/prod/client')))
 
-        router.get('*', (req, res) => res.sendFile(resolve('./build/client/index.html')))
+        router.get('*', (req, res) => res.sendFile(resolve('./build/prod/client/index.html')))
     }
-}
-
-init()
+})()
 
 export default router
